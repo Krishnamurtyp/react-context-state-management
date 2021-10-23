@@ -72,7 +72,7 @@ export type UserPayload = {
     gender?: string;
     password?: string;
   };
-  [ActionTypes.LOGOUT]: {};
+  [ActionTypes.LOGOUT]:{};
 };
 
 export type CartPayload = {
