@@ -3,27 +3,23 @@ import { CartReducer } from "./reducers/CartReducer";
 import { InitialStateType, AllActions } from "./types";
 import React, { createContext, useReducer } from "react";
 import ProductReducer from "./reducers/ProductReducer";
-const initialState: InitialStateType = {
-  products: [],
-  user: {
-    username: "orinda",
-    gender: "male",
-    isAdmin: false,
-    email: "forinda82@gmail.com",
-  },
-  cart: {
-    products: {
-      id: "",
-      title: "",
-      description: "",
-      colors: undefined,
-      category: undefined,
-      sizes: undefined,
-      count: 0,
-    },
-    totalCost: 0,
-  },
-};
+const initialState: InitialStateType = JSON.parse(
+  localStorage.getItem("state")!
+)
+  ? JSON.parse(localStorage.getItem("state")!)
+  : {
+      products: [],
+      user: {
+        username: "",
+        gender: "",
+        isAdmin: false,
+        email: "",
+      },
+      cart: {
+        products: [],
+        totalCost: 0,
+      },
+    };
 
 const AppContext = createContext<{
   state: InitialStateType;

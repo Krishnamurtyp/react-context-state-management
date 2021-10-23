@@ -32,7 +32,7 @@ export type ProductCartType = {
 };
 
 export type CartType = {
-  products: ProductCartType;
+  products: ProductCartType[];
   totalCost: number;
 };
 
