@@ -16,7 +16,7 @@ const AppContext = createContext<{
   dispatch: React.Dispatch<any>;
 }>({ state: initialState, dispatch: () => null });
 
-const combinedReducers = ({ user, count }, action: ActionTypes) => ({
+const combinedReducers = ({ user, count }: IState, action: ActionTypes) => ({
   user: userReducer(user, action),
   count: countReducer(count, action),
 });
@@ -29,5 +29,4 @@ const AppProvider: React.FC = (props) => {
     </AppContext.Provider>
   );
 };
-export default AppProvider
-export  { AppContext, AppProvider };
+export { AppContext, AppProvider };

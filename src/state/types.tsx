@@ -16,10 +16,17 @@ export interface ILogin {
   type: "LOGIN";
   payload: { username: string; email: string };
 }
+export interface ILogout {
+  type: "LOGOUT";
+}
 
 export interface ICountIncrement {
   type: "INCREMENT";
   payload: number;
 }
+export interface ICountDecrement {
+  type: "DECREMENT";
+  payload: number;
+}
 
-export type ActionTypes = ICountIncrement | ILogin;
+export type ActionTypes = ICountIncrement | ILogin | ICountDecrement|ILogout;

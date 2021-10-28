@@ -2,11 +2,11 @@ import ReactDOM from "react-dom";
 import React from "react";
 import App from "./App";
 import "./index.scss";
-import  Provider  from "./state/AppState";
+import { AppProvider } from "./state/AppState";
 
 ReactDOM.render(
-  <Provider>
+  <AppProvider>
     <App />
-  </Provider>,
+  </AppProvider>,
   document.getElementById("root")
 );
